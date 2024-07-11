@@ -1,0 +1,16 @@
+@import '../../_variables';
+
+.separator {
+  width: 100%;
+  color: $detail-color;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 300;
+  gap: 6px;
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $detail-color;
+  }
+}
