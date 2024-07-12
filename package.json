@@ -63,6 +63,7 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "react-router-dom": "^6.24.1"
   }
 }

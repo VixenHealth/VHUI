@@ -1,8 +1,7 @@
 import classNames from "classnames/bind";
-
-import Vk from "../../assets/icons/vk.svg";
-import Yandex from "../../assets/icons/yandex.svg";
-import Gosuslugi from "../../assets/icons/gosuslugi.svg";
+import Vk from "../../assets/vk.svg";
+import Yandex from "../../assets/yandex.svg";
+import Gosuslugi from "../../assets/gosuslugi.svg";
 
 import styles from "./style.module.scss";
 import React from "react";
