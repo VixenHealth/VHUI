@@ -9,7 +9,14 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/preset-scss",
+    {
+      name: "@storybook/preset-scss",
+      options: {
+        cssLoaderOptions: {
+          modules: false
+        }
+      }
+    }
   ],
   framework: {
     name: "@storybook/react-webpack5",
