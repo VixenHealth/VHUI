@@ -22,5 +22,17 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  webpackFinal: async (config: any) => {
+    if (config.resolve) {
+      config.module.rules.unshift({
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      });
+    }
+    
+    return config;
+  },
 };
+
 export default config;

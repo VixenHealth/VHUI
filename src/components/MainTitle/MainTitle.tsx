@@ -1,8 +1,7 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./style.module.scss";
-import React from "react";
 
 export enum SizeMainTitleValues {
   BIG = "big",

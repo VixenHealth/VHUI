@@ -1,8 +1,8 @@
+import React from "react";
 import { FC, InputHTMLAttributes } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./style.module.scss";
-import React from "react";
 
 const cx = classNames.bind(styles);
 

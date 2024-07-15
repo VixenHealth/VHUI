@@ -1,4 +1,5 @@
-import type { Preview } from "@storybook/react";
+import type {Preview, StoryFn} from "@storybook/react";
+import {RootDecorator} from "./decorators/RootDecorator";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +10,9 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story: StoryFn) => RootDecorator(Story)
+  ]
 };
 
 export default preview;

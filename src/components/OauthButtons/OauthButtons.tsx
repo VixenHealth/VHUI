@@ -1,10 +1,10 @@
+import React from "react";
 import classNames from "classnames/bind";
 import Vk from "../../assets/vk.svg";
 import Yandex from "../../assets/yandex.svg";
 import Gosuslugi from "../../assets/gosuslugi.svg";
 
 import styles from "./style.module.scss";
-import React from "react";
 
 const cx = classNames.bind(styles);
 
