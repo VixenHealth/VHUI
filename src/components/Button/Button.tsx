@@ -1,11 +1,33 @@
 import React from "react";
+import { ButtonHTMLAttributes, FC } from "react";
+import classNames from "classnames/bind";
 
-export interface ButtonProps {
-	labell: string;
+import styles from "./style.module.scss";
+import 'normalize.css';
+
+const cx = classNames.bind(styles);
+
+export enum SizeButtonValues {
+  BIG = "big",
+  MEDIUM = "medium",
+  SMALL = "small",
 }
 
-const Button = (props: ButtonProps) => {
-	return <button>{props.labell}</button>;
-};
+export enum ColorButtonValues {
+  DARK = "dark",
+  NEUTRAL = "neutral",
+}
 
-export default Button;
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  size: SizeButtonValues;
+  color?: ColorButtonValues;
+}
+
+export const Button: FC<Props> = ({
+  text,
+  size,
+  color = ColorButtonValues.DARK,
+}) => {
+  return <button className={cx("button", size, color)}>{text}</button>;
+};
