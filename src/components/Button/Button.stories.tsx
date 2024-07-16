@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { Button } from "../index";
 import { ColorButtonValues, SizeButtonValues } from "./Button";
-import { Link } from "react-router-dom";
 
 const meta: Meta<typeof Button> = {
 	title: 'shared/Button',
