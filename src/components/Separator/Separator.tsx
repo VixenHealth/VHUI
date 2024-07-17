@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./style.module.scss";
+import '../../normalize.css';
 
 const cx = classNames.bind(styles);
 
