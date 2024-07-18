@@ -1,1 +1,1 @@
-export { AppInput } from "./AppInput";
+export { AppInput, SizeInputValues } from "./AppInput";
