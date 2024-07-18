@@ -1,6 +1,6 @@
 {
   "name": "@VixenHealth/vixenhealth-ui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "repository": "https://github.com/VixenHealth/VHUI.git",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
@@ -66,9 +66,11 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
+    "@rollup/plugin-image": "^3.0.3",
     "@svgr/webpack": "^8.1.0",
     "classnames": "^2.5.1",
     "normalize.css": "^8.0.1",
+    "postcss-url": "^10.1.3",
     "react-router-dom": "^6.24.1",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook-preset-inline-svg": "^1.0.1"
