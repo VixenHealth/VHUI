@@ -1,15 +1,12 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
-import postcss from "@rollup/plugin-terser";
 import dts from "rollup-plugin-dts";
-import css from 'rollup-plugin-css-only'
-import sass from 'rollup-plugin-sass'
-
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import svgr from '@svgr/rollup'
 import ignore from "rollup-plugin-ignore";
+import postcss from 'rollup-plugin-postcss';
 
 const packageJson = require("./package.json");
 
@@ -34,10 +31,16 @@ export default [
 			resolve(),
 			commonjs(),
 			typescript({ tsconfig: "./tsconfig.json" }),
-			postcss(),
+			postcss({
+				minimize: true,
+				modules: true,
+				extract: true,
+				extensions: ['.css'],
+				inject: {
+					insertAt: 'top',
+				},
+			}),
 			terser(),
-			css(),
-			sass(),
 			ignore(["*.stories.tsx"])
 		],
 	},

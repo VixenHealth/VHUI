@@ -33,6 +33,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           always-auth: true
       - run: npm ci
+      - run: npm version patch
       - run: npm run rollup build
       - run: npm publish
         env:
