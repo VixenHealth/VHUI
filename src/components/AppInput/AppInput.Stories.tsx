@@ -14,7 +14,7 @@ const meta: Meta<typeof AppInput> = {
 export const InputBig: StoryObj<typeof meta> = {
 	args: {
 		placeholder: 'Text',
-		size: SizeInputValues.BIG
+		inputSize: SizeInputValues.BIG
 	}
 }
 
