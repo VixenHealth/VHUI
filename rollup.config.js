@@ -35,7 +35,7 @@ export default [
 			postcss({
 				minimize: true,
 				modules: true,
-				extract: true,
+				extract: false,
 				extensions: ['.css'],
 				plugins: [
 					url({
