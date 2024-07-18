@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 
 import styles from "./style.module.scss";
-import '../../normalize.css';
+import 'normalize.css'
 
 const cx = classNames.bind(styles);
 

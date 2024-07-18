@@ -68,6 +68,7 @@
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
     "classnames": "^2.5.1",
+    "normalize.css": "^8.0.1",
     "react-router-dom": "^6.24.1",
     "storybook-preset-inline-svg": "^1.0.1"
   }

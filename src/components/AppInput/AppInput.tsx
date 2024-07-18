@@ -1,9 +1,9 @@
 import React from "react";
 import { FC, InputHTMLAttributes } from "react";
 import classNames from "classnames/bind";
+import 'normalize.css'
 
 import styles from "./style.module.scss";
-import '../../normalize.css';
 
 const cx = classNames.bind(styles);
 
