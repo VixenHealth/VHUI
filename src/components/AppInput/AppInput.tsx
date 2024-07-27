@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef, useRef} from "react";
 import { FC, InputHTMLAttributes } from "react";
 import classNames from "classnames/bind";
 import 'normalize.css'
@@ -18,12 +18,13 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   inputSize: SizeInputValues;
 }
 
-export const AppInput: FC<Props> = ({ placeholder, inputSize }) => {
+export const AppInput = forwardRef<HTMLInputElement, Props>(({ placeholder, inputSize }, ref) => {
   return (
     <input
+      ref={ref}
       type="text"
       placeholder={placeholder}
       className={cx("input", inputSize)}
     />
   );
-};
+});
