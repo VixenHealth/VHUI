@@ -19,8 +19,6 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const AppInput = forwardRef<HTMLInputElement, Props>(({ inputSize, ...props}, ref) => {
-  console.log(props)
-  
   return (
     <input
       ref={ref}
