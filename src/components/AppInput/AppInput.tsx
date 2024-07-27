@@ -18,9 +18,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   inputSize: SizeInputValues;
 }
 
-export const AppInput = forwardRef<HTMLInputElement, Props>(({...props}, ref) => {
-  const {inputSize} = props;
-  
+export const AppInput = forwardRef<HTMLInputElement, Props>(({ inputSize, ...props}, ref) => {
   return (
     <input
       ref={ref}
