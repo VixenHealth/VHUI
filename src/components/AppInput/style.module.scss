@@ -1,11 +1,23 @@
 @import '../../_variables';
 
-
-.input {
+.text-field {
   width: 100%;
-  background-color: $neutral-color;
-  color: $color-dark-main;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &__input {
+    &.error {
+      border: 1px solid $color-accent-error;
+    }
+    width: 100%;
+    background-color: $neutral-color;
+    color: $color-dark-main;
+  }
+  &__error {
+    color: $color-accent-error;
+  }
 }
+
 
 .big {
   font-weight: 300;

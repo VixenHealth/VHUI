@@ -16,15 +16,20 @@ export enum SizeInputValues {
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
   inputSize: SizeInputValues;
+  error: string
 }
 
-export const AppInput = forwardRef<HTMLInputElement, Props>(({ inputSize, ...props}, ref) => {
+export const AppInput = forwardRef<HTMLInputElement, Props>(({ inputSize, error, ...props}, ref) => {
   return (
-    <input
-      ref={ref}
-      type="text"
-      className={cx("input", inputSize)}
-      {...props}
-    />
-  );
+    <div className={cx("text-field")}>
+      <input
+        ref={ref}
+        type="text"
+        className={cx("text-field__input", inputSize, {error})}
+        {...props}
+      />
+      {error && <div className={cx("text-field__error")}>{error}</div>}
+    </div>
+  )
+    ;
 });
