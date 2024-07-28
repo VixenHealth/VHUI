@@ -12,8 +12,8 @@ const meta: Meta<typeof AppCheckbox> = {
 
 export const InputBig: StoryObj<typeof meta> = {
 	args: {
-		label: 'AppInput',
-		id: 'AppInput'
+		label: 'TextInput',
+		id: 'TextInput'
 	}
 }
 

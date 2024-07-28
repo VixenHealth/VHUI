@@ -3,15 +3,11 @@ import { InputHTMLAttributes } from "react";
 import classNames from "classnames/bind";
 import 'normalize.css'
 
+import {SizeInputValues} from "../../constants/SizeInputValue";
+
 import styles from "./style.module.scss";
 
 const cx = classNames.bind(styles);
-
-export enum SizeInputValues {
-  BIG = "big",
-  MEDIUM = "medium",
-  SMALL = "small",
-}
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
@@ -19,7 +15,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   error: string
 }
 
-export const AppInput = forwardRef<HTMLInputElement, Props>(({ inputSize, error, ...props}, ref) => {
+export const TextInput = forwardRef<HTMLInputElement, Props>(({ inputSize, error, ...props}, ref) => {
   return (
     <div className={cx("text-field")}>
       <input
