@@ -5,7 +5,7 @@ import dts from "rollup-plugin-dts";
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import svgr from '@svgr/rollup'
-import url from "postcss-url"
+import postcss_url from "postcss-url"
 import postcss from 'rollup-plugin-postcss';
 import image from "@rollup/plugin-image";
 
@@ -38,7 +38,7 @@ export default [
 				extract: false,
 				extensions: ['.css'],
 				plugins: [
-					url({
+					postcss_url({
 						url: "inline", // enable inline assets using base64 encoding
 						maxSize: 10, // maximum file size to inline (in kilobytes)
 						fallback: "copy", // fallback method to use if max size is exceeded

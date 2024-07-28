@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import {AppLink} from "../index";
-import { Link } from "react-router-dom";
 
 const meta: Meta<typeof AppLink> = {
 	title: 'shared/AppLink',
