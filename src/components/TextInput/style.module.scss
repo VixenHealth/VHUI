@@ -12,6 +12,23 @@
     width: 100%;
     background-color: $neutral-color;
     color: $color-dark-main;
+    &.big {
+      font-weight: 300;
+      border-radius: 10px;
+      font-size: 20px;
+      padding: 12px 16px;
+      &::placeholder {
+        font-size: 20px;
+        font-weight: 300;
+        color: $color-placeholder;
+      }
+      @media(max-width: $md3) {
+        font-size: 17px;
+        &::placeholder {
+          font-size: 17px;
+        }
+      }
+    }
   }
   &__error {
     color: $color-accent-error;
@@ -19,20 +36,3 @@
 }
 
 
-.big {
-  font-weight: 300;
-  border-radius: 10px;
-  font-size: 20px;
-  padding: 12px 16px;
-  &::placeholder {
-    font-size: 20px;
-    font-weight: 300;
-    color: $color-placeholder;
-  }
-  @media(max-width: $md3) {
-    font-size: 17px;
-    &::placeholder {
-      font-size: 17px;
-    }
-  }
-}

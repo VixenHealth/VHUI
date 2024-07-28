@@ -11,7 +11,7 @@ const meta: Meta<typeof TextInput> = {
 	tags: ['autodocs'],
 }
 
-export const TextInput: StoryObj<typeof meta> = {
+export const CommonTextInput: StoryObj<typeof meta> = {
 	args: {
 		error: '',
 		placeholder: 'Text',
