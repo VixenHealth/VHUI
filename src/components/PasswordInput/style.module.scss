@@ -58,6 +58,7 @@
   display: inline-block;
   height: 20px;
   overflow: hidden;
+  pointer-events: none;
   &__container {
     position: relative;
     width: 100%;
