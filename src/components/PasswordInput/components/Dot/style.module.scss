@@ -1,0 +1,33 @@
+@import '../../../../_variables';
+
+.dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  animation: move 5s linear infinite, fadeOut 5s ease-out;
+  opacity: 1;
+  background-color: $color-dark-main;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
