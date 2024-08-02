@@ -14,6 +14,7 @@
     width: 100%;
     background-color: $neutral-color;
     color: $color-dark-main;
+    caret-color: $color-dark-main;
     &.error {
       border: 1px solid $color-accent-error;
     }
@@ -58,6 +59,7 @@
   display: inline-block;
   height: 20px;
   overflow: hidden;
+  max-width: 215px;
   pointer-events: none;
   &__container {
     position: relative;

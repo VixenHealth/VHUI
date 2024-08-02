@@ -7,7 +7,7 @@ import {SizeInputValues} from "../../constants/SizeInputValue";
 import HiddenIcon from "../../assets/show_password.svg";
 
 import styles from "./style.module.scss";
-import {DotAnimation} from "./components/Dot";
+import {Dots} from "./components/Dot/Dot";
 
 const cx = classNames.bind(styles);
 
@@ -22,30 +22,30 @@ enum TypeInput {
   TEXT = "text",
 }
 
+const DOT_COUNT = 200;
+const SYMBOL_WIDTH = 7;
+
 export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
   const [isHidden, setIsHidden] = useState(true);
   const [inputValue, setInputValue] = useState('');
   const [inputValueWidth, setInputValueWidth] = useState(0);
   const [dotCount, setDotCount] = useState(0);
-  const [dotsComponents, setDots] = useState<React.JSX.Element[]>([])
   const inputValueRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (inputValueRef.current) {
-      setInputValueWidth(inputValueRef.current.offsetWidth)
-    }
+    setInputValueWidth(inputValue.length * SYMBOL_WIDTH)
   }, [inputValueRef.current, inputValue]);
+  
+  console.log(inputValueWidth)
 
   useEffect(() => {
       setDotCount(inputValueWidth * 5)
   }, [inputValueWidth]);
 
-  console.log(dotCount)
-
   const toggleIsHidden = () => {
     setIsHidden(!isHidden);
   }
-
+  
   return (
     <div className={cx("text-field")}>
       <div className={cx("text-field__wrapper")}>
@@ -60,21 +60,15 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
         <div onClick={toggleIsHidden} className={cx("show-password")}>
           <img alt="hidden" src={HiddenIcon}/>
         </div>
+        {isHidden && !!inputValueWidth && (
+          <div style={{width: inputValueWidth}} className="spoiler">
+            <div className={cx("spoiler__container")}>
+              <Dots dotCount={DOT_COUNT}/>
+            </div>
+          </div>
+        )}
       </div>
       {error && <div className={cx("text-field__error")}>{error}</div>}
-      {isHidden && (
-        <div style={{width: inputValueWidth}} className="spoiler">
-          <div className={cx("spoiler__container")}>
-            <DotAnimation dotCount={300}/>
-          </div>
-        </div>
-      )}
-      <span
-        ref={inputValueRef}
-        className={cx("fantom-text")}
-      >
-        {inputValue}
-      </span>
     </div>
   );
 });
