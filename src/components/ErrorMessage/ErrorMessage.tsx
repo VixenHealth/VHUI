@@ -19,12 +19,12 @@ interface Props {
 	size: SizeErrorMessageValues;
 }
 
-export const ErrorMessage: FC<Props> = ({ message, size, description }) => {
+export const ErrorMessage: FC<Props> = ({message, size, description}) => {
 	return (
 		<div className={cx("error-message", size)}>
 			<div className={cx("error-message__title")}>{message}</div>
 			<div className={cx("error-message__description")}>{description}</div>
-			<img src={CloseIcon} alt="close" className={cx("close")} />
+			<img src={CloseIcon} alt="close" className={cx("close")}/>
 		</div>
 	)
 }

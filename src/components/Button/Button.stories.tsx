@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
-import { Button } from "../index";
-import { ColorButtonValues, SizeButtonValues } from "./Button";
+import type {Meta, StoryObj} from '@storybook/react'
+import {fn} from '@storybook/test'
+import {Button} from "../index";
+import {ColorButtonValues, SizeButtonValues} from "./Button";
 
 const meta: Meta<typeof Button> = {
 	title: 'shared/Button',
@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-	args: { onClick: fn() }
+	args: {onClick: fn()}
 }
 
 export const ButtonBigDark: StoryObj<typeof meta> = {

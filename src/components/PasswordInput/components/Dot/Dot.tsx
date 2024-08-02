@@ -19,13 +19,13 @@ const resetDot = (dot: HTMLDivElement) => {
 	dot.offsetHeight;
 	dot.style.animation = `move ${smallLifetime} linear, fadeOut ${smallLifetime} ease-out forwards`;
 	setTimeout(() => {
-	
+		
 		resetDot(dot)
 	}, lifetime);
 	console.log("re-render")
 };
 
-export const Dots: React.FC<{ dotCount: number }> = ({ dotCount }) => {
+export const Dots: React.FC<{ dotCount: number }> = ({dotCount}) => {
 	const dotsContainerRef = useRef<HTMLDivElement | null>(null);
 	const [dots, setDots] = useState<HTMLDivElement[]>([]);
 	

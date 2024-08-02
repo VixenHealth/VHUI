@@ -7,12 +7,14 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 28px;
+
   &__input {
     position: absolute;
     z-index: -1;
     opacity: 0;
   }
-  &__input+&__label::before{
+
+  &__input + &__label::before {
     content: "";
     display: block;
     width: 20px;
@@ -24,7 +26,8 @@
     transform: translateY(-50%);
     right: calc(100% + 10px);
   }
-  &__input:checked+&__label::before {
+
+  &__input:checked + &__label::before {
     border-radius: 3px;
     background-color: $color-accent-main;
     background-image: url("../../assets/checked.svg");

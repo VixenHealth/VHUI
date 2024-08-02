@@ -1,2 +1,2 @@
 export * from './components';
-export { SizeInputValues } from './constants/SizeInputValue'
+export {SizeInputValues} from './constants/SizeInputValue'

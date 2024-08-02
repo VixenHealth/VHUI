@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react'
-import { SizeInputValues } from "../../constants/SizeInputValue";
-import { EmailInput } from "./index";
+import type {Meta, StoryObj} from '@storybook/react'
+import {SizeInputValues} from "../../constants/SizeInputValue";
+import {EmailInput} from "./index";
 
 const meta: Meta<typeof EmailInput> = {
 	title: 'shared/EmailInput',

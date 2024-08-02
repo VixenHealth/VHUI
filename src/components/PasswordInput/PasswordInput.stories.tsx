@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { PasswordInput } from "./index"
-import { SizeInputValues } from "../../constants/SizeInputValue"
+import type {Meta, StoryObj} from '@storybook/react'
+import {PasswordInput} from "./index"
+import {SizeInputValues} from "../../constants/SizeInputValue"
 
 const meta: Meta<typeof PasswordInput> = {
 	title: 'shared/PasswordInput',

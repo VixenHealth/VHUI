@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
-import { InputHTMLAttributes } from "react";
+import React, {forwardRef} from "react";
+import {InputHTMLAttributes} from "react";
 import classNames from "classnames/bind";
 import 'normalize.css'
 
@@ -15,7 +15,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	error: string
 }
 
-export const EmailInput = forwardRef<HTMLInputElement, Props>(({ inputSize, error, ...props}, ref) => {
+export const EmailInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
 	return (
 		<div className={cx("text-field")}>
 			<input

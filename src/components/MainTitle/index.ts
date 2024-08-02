@@ -1,1 +1,1 @@
-export { MainTitle, SizeMainTitleValues } from "./MainTitle";
+export {MainTitle, SizeMainTitleValues} from "./MainTitle";

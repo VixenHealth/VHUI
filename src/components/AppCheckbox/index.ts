@@ -1,1 +1,1 @@
-export { AppCheckbox } from "./AppCheckbox";
+export {AppCheckbox} from "./AppCheckbox";
