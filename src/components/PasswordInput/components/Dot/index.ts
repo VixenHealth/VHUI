@@ -1,1 +1,1 @@
-export { Dot } from "./Dot";
+export { DotAnimation } from "./Dot";
