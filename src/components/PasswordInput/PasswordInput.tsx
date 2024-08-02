@@ -29,18 +29,11 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 	const [isHidden, setIsHidden] = useState(true);
 	const [inputValue, setInputValue] = useState('');
 	const [inputValueWidth, setInputValueWidth] = useState(0);
-	const [dotCount, setDotCount] = useState(0);
 	const inputValueRef = useRef<HTMLInputElement>(null);
 	
 	useEffect(() => {
 		setInputValueWidth(inputValue.length * SYMBOL_WIDTH)
 	}, [inputValueRef.current, inputValue]);
-	
-	console.log(inputValueWidth)
-	
-	useEffect(() => {
-		setDotCount(inputValueWidth * 5)
-	}, [inputValueWidth]);
 	
 	const toggleIsHidden = () => {
 		setIsHidden(!isHidden);
@@ -54,7 +47,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 					type={isHidden ? TypeInput.PASSWORD : TypeInput.TEXT}
 					className={cx("text-field__input", inputSize, {error})}
 					value={inputValue}
-					onChange={e => setInputValue(e.target.value)}
 					{...props}
 				/>
 				<div onClick={toggleIsHidden} className={cx("show-password")}>
