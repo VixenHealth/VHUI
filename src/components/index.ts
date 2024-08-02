@@ -6,3 +6,4 @@ export { PasswordInput } from "./PasswordInput";
 export { AppLink } from "./AppLink";
 export { MainTitle, SizeMainTitleValues } from "./MainTitle";
 export { Separator } from "./Separator";
+export { ErrorMessage, SizeErrorMessageValues } from "./ErrorMessage";

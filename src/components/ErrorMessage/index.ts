@@ -1,1 +1,1 @@
-export {ErrorMessage} from './ErrorMessage'
+export { ErrorMessage, SizeErrorMessageValues } from './ErrorMessage'
