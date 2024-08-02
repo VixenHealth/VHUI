@@ -26,6 +26,5 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(({ inputSize, error
       />
       {error && <div className={cx("text-field__error")}>{error}</div>}
     </div>
-  )
-    ;
+  );
 });
