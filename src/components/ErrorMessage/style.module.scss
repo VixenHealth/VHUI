@@ -1,0 +1,32 @@
+@import '../../_variables';
+
+.error-message {
+  width: 100%;
+  position: relative;
+  background-color: $color-primary-white;
+  color: $color-primary-black;
+  box-shadow: 3px 3px 12px rgba(200, 0, 0, 0.2);
+  border-radius: 29px;
+  &__title {
+    font-weight: 700;
+  }
+  &__description {
+    font-weight: 300;
+  }
+  &.large {
+    font-size: 18px;
+    max-width: 395px;
+    padding: 11px 21px;
+  }
+  &.small {
+    font-size: 16px;
+    max-width: 352px;
+    padding: 16px 20px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 23px;
+}
