@@ -32,8 +32,14 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 	const inputValueRef = useRef<HTMLInputElement>(null);
 	
 	useEffect(() => {
-		if (inputValueRef.current) {
-			setInputValueWidth(inputValueRef.current.value.length * SYMBOL_WIDTH)
+		const handleInput = () => {
+			if (inputValueRef.current) {
+				setInputValueWidth(inputValueRef.current.value.length * SYMBOL_WIDTH);
+			}
+		};
+		const inputElement = inputValueRef.current;
+		if (inputElement) {
+			inputElement.addEventListener('input', handleInput);
 		}
 	}, [inputValueRef.current]);
 	
