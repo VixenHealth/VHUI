@@ -17,7 +17,7 @@ const resetDot = (dot: HTMLDivElement) => {
 	dot.style.animationDuration = smallLifetime;
 	dot.style.animation = 'none';
 	dot.offsetHeight;
-	dot.style.animation = `move ${smallLifetime} linear, fadeOut ${smallLifetime} ease-out forwards`;
+	dot.style.animation = `${cx("move")} ${smallLifetime} linear, ${cx("fadeOut")} ${smallLifetime} ease-out forwards`;
 	setTimeout(() => {
 		
 		resetDot(dot)
@@ -27,7 +27,7 @@ const resetDot = (dot: HTMLDivElement) => {
 
 export const Dots: React.FC<{ dotCount: number }> = ({dotCount}) => {
 	const dotsContainerRef = useRef<HTMLDivElement | null>(null);
-	const [dots, setDots] = useState<HTMLDivElement[]>([]);
+	const [dots] = useState<HTMLDivElement[]>([]);
 	
 	useEffect(() => {
 		const dotsContainer = dotsContainerRef.current;

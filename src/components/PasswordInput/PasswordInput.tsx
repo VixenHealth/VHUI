@@ -6,9 +6,9 @@ import 'normalize.css'
 import {Dots} from "./components/Dot";
 import {SizeInputValues} from "../../constants/SizeInputValue";
 import HiddenIcon from "../../assets/show_password.svg";
+import {mergeRefs} from "../../utils/mergeRefs";
 
 import styles from "./style.module.scss";
-import {mergeRefs} from "../../utils/mergeRefs";
 
 const cx = classNames.bind(styles);
 
