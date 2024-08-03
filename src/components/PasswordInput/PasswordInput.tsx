@@ -8,6 +8,7 @@ import {SizeInputValues} from "../../constants/SizeInputValue";
 import HiddenIcon from "../../assets/show_password.svg";
 
 import styles from "./style.module.scss";
+import {mergeRefs} from "../../utils/mergeRefs";
 
 const cx = classNames.bind(styles);
 
@@ -27,13 +28,14 @@ const SYMBOL_WIDTH = 7;
 
 export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
 	const [isHidden, setIsHidden] = useState(true);
-	const [inputValue, setInputValue] = useState('');
 	const [inputValueWidth, setInputValueWidth] = useState(0);
 	const inputValueRef = useRef<HTMLInputElement>(null);
 	
 	useEffect(() => {
-		setInputValueWidth(inputValue.length * SYMBOL_WIDTH)
-	}, [inputValueRef.current, inputValue]);
+		if (inputValueRef.current) {
+			setInputValueWidth(inputValueRef.current.value.length * SYMBOL_WIDTH)
+		}
+	}, [inputValueRef.current]);
 	
 	const toggleIsHidden = () => {
 		setIsHidden(!isHidden);
@@ -43,10 +45,9 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 		<div className={cx("text-field")}>
 			<div className={cx("text-field__wrapper")}>
 				<input
-					ref={ref}
+					ref={mergeRefs([ref, inputValueRef])}
 					type={isHidden ? TypeInput.PASSWORD : TypeInput.TEXT}
 					className={cx("text-field__input", inputSize, {error})}
-					value={inputValue}
 					{...props}
 				/>
 				<div onClick={toggleIsHidden} className={cx("show-password")}>
