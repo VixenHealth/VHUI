@@ -1,9 +1,8 @@
-import React, {forwardRef, useEffect, useRef, useState} from "react";
+import React, {forwardRef,  useRef, useState} from "react";
 import {InputHTMLAttributes} from "react";
 import classNames from "classnames/bind";
 import 'normalize.css'
 
-import {Dots} from "./components/Dot";
 import {SizeInputValues} from "../../constants/SizeInputValue";
 import HiddenIcon from "../../assets/show_password.svg";
 import {mergeRefs} from "../../utils/mergeRefs";
@@ -23,25 +22,9 @@ enum TypeInput {
 	TEXT = "text",
 }
 
-const DOT_COUNT = 200;
-const SYMBOL_WIDTH = 7;
-
 export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
 	const [isHidden, setIsHidden] = useState(true);
-	const [inputValueWidth, setInputValueWidth] = useState(0);
 	const inputValueRef = useRef<HTMLInputElement>(null);
-	
-	useEffect(() => {
-		const handleInput = () => {
-			if (inputValueRef.current) {
-				setInputValueWidth(inputValueRef.current.value.length * SYMBOL_WIDTH);
-			}
-		};
-		const inputElement = inputValueRef.current;
-		if (inputElement) {
-			inputElement.addEventListener('input', handleInput);
-		}
-	}, [inputValueRef.current]);
 	
 	const toggleIsHidden = () => {
 		setIsHidden(!isHidden);
@@ -59,13 +42,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 				<div onClick={toggleIsHidden} className={cx("show-password")}>
 					<img alt="hidden" src={HiddenIcon}/>
 				</div>
-				{isHidden && !!inputValueWidth && (
-					<div style={{width: inputValueWidth}} className={cx("spoiler")}>
-						<div className={cx("spoiler__container")}>
-							<Dots dotCount={DOT_COUNT}/>
-						</div>
-					</div>
-				)}
 			</div>
 			{error && <div className={cx("text-field__error")}>{error}</div>}
 		</div>

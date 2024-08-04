@@ -18,6 +18,11 @@
     color: $color-dark-main;
     caret-color: $color-dark-main;
 
+    &:focus {
+      border: 2px solid $color-dark-main;
+    }
+
+
     &.error {
       border: 1px solid $color-accent-error;
     }
@@ -74,10 +79,6 @@
     width: 100%;
     height: 100%;
   }
-}
-
-input[type="password"] {
-  color: $neutral-color;;
 }
 
 .fantom-text {
