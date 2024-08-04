@@ -1,11 +1,10 @@
-import React, {forwardRef,  useRef, useState} from "react";
+import React, {forwardRef, useState} from "react";
 import {InputHTMLAttributes} from "react";
 import classNames from "classnames/bind";
 import 'normalize.css'
 
 import {SizeInputValues} from "../../constants/SizeInputValue";
 import HiddenIcon from "../../assets/show_password.svg";
-import {mergeRefs} from "../../utils/mergeRefs";
 
 import styles from "./style.module.scss";
 
@@ -24,7 +23,6 @@ enum TypeInput {
 
 export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
 	const [isHidden, setIsHidden] = useState(true);
-	const inputValueRef = useRef<HTMLInputElement>(null);
 	
 	const toggleIsHidden = () => {
 		setIsHidden(!isHidden);
@@ -34,7 +32,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 		<div className={cx("text-field")}>
 			<div className={cx("text-field__wrapper")}>
 				<input
-					ref={mergeRefs([ref, inputValueRef])}
+					ref={ref}
 					type={isHidden ? TypeInput.PASSWORD : TypeInput.TEXT}
 					className={cx("text-field__input", inputSize, {error})}
 					{...props}
