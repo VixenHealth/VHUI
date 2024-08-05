@@ -17,7 +17,7 @@ interface Props {
 	message: string;
 	description?: string;
 	size: SizeErrorMessageValues;
-	onClick: (id: number) => void;
+	onClick: (id: string) => void;
 	timeToDelete: number;
 }
 
