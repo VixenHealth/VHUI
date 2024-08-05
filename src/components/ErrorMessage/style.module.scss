@@ -7,7 +7,10 @@
   color: $color-primary-black;
   box-shadow: 3px 3px 12px rgba(200, 0, 0, 0.2);
   border-radius: 29px;
-  animation: hideBlock 2s ease;
+
+  &.hide {
+    animation: hideBlock 2s ease;
+  }
 
   &__title {
     font-weight: 700;
@@ -34,10 +37,16 @@
   position: absolute;
   top: 15px;
   right: 23px;
+  cursor: pointer;
 }
 
 
 @keyframes hideBlock {
-  from { opacity: 1; }
-  to { opacity: 0; display: none; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
 }

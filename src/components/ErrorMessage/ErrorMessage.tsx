@@ -24,20 +24,44 @@ interface Props {
 export const ErrorMessage: FC<Props> = ({message, size, description, onClick, timeToDelete}) => {
 	const messageRef = useRef<HTMLInputElement>(null)
 	const [time, setTime] = useState<number>(timeToDelete)
+	const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
 	
 	useEffect(() => {
-		if (time) {
-			setTimeout(() => {
-				if (messageRef.current) {
-					messageRef.current.classList.add("hide")
-				}
-			}, time - 2000)
+		if (messageRef.current) {
+			messageRef.current.classList.remove("hide");
 		}
+		
+		if (time) {
+			const id = setTimeout(() => {
+				if (messageRef.current) {
+					messageRef.current.classList.add("hide");
+				}
+			}, time - 2000);
+			setTimerId(id);
+		}
+		
+		return () => {
+			if (timerId) {
+				clearTimeout(timerId);
+			}
+		};
 	}, [time, timeToDelete]);
+	
+	const handleMouseEnter = () => {
+		setTime(timeToDelete * 2);
+		if (timerId) {
+			clearTimeout(timerId);
+		}
+	};
+	
+	const handleMouseLeave = () => {
+		setTime(timeToDelete);
+	};
 	
 	return (
 		<div
-			onMouseEnter={() => setTime(timeToDelete)}
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
 			ref={messageRef}
 			className={cx("error-message", size)}
 		>
