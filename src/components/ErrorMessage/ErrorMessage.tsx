@@ -17,7 +17,7 @@ interface Props {
 	message: string;
 	description?: string;
 	size: SizeErrorMessageValues;
-	onClick: () => void;
+	onClick: (id: number) => void;
 	timeToDelete: number;
 }
 
@@ -67,7 +67,7 @@ export const ErrorMessage: FC<Props> = ({message, size, description, onClick, ti
 		>
 			<div className={cx("error-message__title")}>{message}</div>
 			<div className={cx("error-message__description")}>{description}</div>
-			<img onClick={onClick} src={CloseIcon} alt="close" className={cx("close")}/>
+			<img onClick={() => onClick} src={CloseIcon} alt="close" className={cx("close")}/>
 		</div>
 	)
 }
