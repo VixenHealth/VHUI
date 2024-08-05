@@ -7,6 +7,7 @@
   color: $color-primary-black;
   box-shadow: 3px 3px 12px rgba(200, 0, 0, 0.2);
   border-radius: 29px;
+  z-index: 10;
 
   &.hide {
     animation: hideBlock 2s ease;
