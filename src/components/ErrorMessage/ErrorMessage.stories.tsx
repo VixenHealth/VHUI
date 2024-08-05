@@ -14,7 +14,11 @@ export const LargeErrorMessage: StoryObj<typeof meta> = {
 	args: {
 		message: "message",
 		description: "message description",
-		size: SizeErrorMessageValues.LARGE
+		size: SizeErrorMessageValues.LARGE,
+		onClick: () => {
+			console.log("close")
+		},
+		timeToDelete: 5000
 	}
 }
 
@@ -22,7 +26,11 @@ export const SmallErrorMessage: StoryObj<typeof meta> = {
 	args: {
 		message: "message",
 		description: "message description",
-		size: SizeErrorMessageValues.SMALL
+		size: SizeErrorMessageValues.SMALL,
+		onClick: () => {
+			console.log("close")
+		},
+		timeToDelete: 5000
 	}
 }
 
