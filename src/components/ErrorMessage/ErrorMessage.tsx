@@ -28,13 +28,13 @@ export const ErrorMessage: FC<Props> = ({message, size, description, onClick, ti
 	
 	useEffect(() => {
 		if (messageRef.current) {
-			messageRef.current.classList.remove("hide");
+			messageRef.current.classList.remove(cx("hide"));
 		}
 		
 		if (time) {
 			const id = setTimeout(() => {
 				if (messageRef.current) {
-					messageRef.current.classList.add("hide");
+					messageRef.current.classList.add(cx("hide"));
 				}
 			}, time - 2000);
 			setTimerId(id);
