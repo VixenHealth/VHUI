@@ -8,7 +8,7 @@ import styles from "./style.module.scss";
 
 const cx = classNames.bind(styles);
 
-export enum SizeErrorMessageValues {
+export enum SizeMessageValues {
 	LARGE = "large",
 	SMALL = "small"
 }
@@ -16,12 +16,12 @@ export enum SizeErrorMessageValues {
 interface Props {
 	message: string;
 	description?: string;
-	size: SizeErrorMessageValues;
+	size: SizeMessageValues;
 	onClick: () => void;
 	timeToDelete: number;
 }
 
-export const ErrorMessage: FC<Props> = ({message, size, description, onClick, timeToDelete}) => {
+export const Message: FC<Props> = ({message, size, description, onClick, timeToDelete}) => {
 	const messageRef = useRef<HTMLInputElement>(null)
 	const [time, setTime] = useState<number>(timeToDelete)
 	const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);

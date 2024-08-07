@@ -1,16 +1,16 @@
 import type {Meta, StoryObj} from '@storybook/react'
-import {ErrorMessage, SizeErrorMessageValues} from "./ErrorMessage";
+import {Message, SizeErrorMessageValues} from "./Message";
 
-const meta: Meta<typeof ErrorMessage> = {
-	title: 'shared/ErrorMessage',
-	component: ErrorMessage,
+const meta: Meta<typeof Message> = {
+	title: 'shared/Message',
+	component: Message,
 	parameters: {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
 }
 
-export const LargeErrorMessage: StoryObj<typeof meta> = {
+export const LargeMessage: StoryObj<typeof meta> = {
 	args: {
 		message: "message",
 		description: "message description",
@@ -22,7 +22,7 @@ export const LargeErrorMessage: StoryObj<typeof meta> = {
 	}
 }
 
-export const SmallErrorMessage: StoryObj<typeof meta> = {
+export const SmallMessage: StoryObj<typeof meta> = {
 	args: {
 		message: "message",
 		description: "message description",
