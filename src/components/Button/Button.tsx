@@ -22,14 +22,13 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;
 	size: SizeButtonValues;
 	color?: ColorButtonValues;
-	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
 }
 
 export const Button: FC<Props> = ({
 	                                  text,
 	                                  size,
 	                                  color = ColorButtonValues.DARK,
-	                                  type = "submit"
+	                                  ...props
                                   }) => {
-	return <button type={type} className={cx("button", size, color)}>{text}</button>;
+	return <button className={cx("button", size, color)} {...props}>{text}</button>;
 };
