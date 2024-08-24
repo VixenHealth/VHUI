@@ -4,6 +4,6 @@ export {TextInput} from "./TextInput";
 export {EmailInput} from "./EmailInput";
 export {PasswordInput} from "./PasswordInput";
 export {AppLink} from "./AppLink";
-export {MainTitle, SizeMainTitleValues} from "./MainTitle";
+export {Typography, VariantTypographyValues} from "./Typography";
 export {Separator} from "./Separator";
 export {Message, SizeMessageValues} from "./Message";
