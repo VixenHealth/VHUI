@@ -44,7 +44,8 @@ export const BodyAdditional: StoryObj<typeof meta> = {
 		variant: VariantTypographyValues.BODY,
 		color: '#A19F9D',
 		fontSize: '24px',
-		fontWeight: '700'
+		fontWeight: '700',
+		style: { marginBottom: 14 }
 	}
 }
 

@@ -15,6 +15,17 @@ export enum VariantTypographyValues {
 	BODY = 'body',
 }
 
+const VariantTypographyTags = {
+	[VariantTypographyValues.H1]: 'h1',
+	[VariantTypographyValues.H2]: 'h2',
+	[VariantTypographyValues.H3]: 'h3',
+	[VariantTypographyValues.H4]: 'h4',
+	[VariantTypographyValues.H5]: 'h5',
+	[VariantTypographyValues.H6]: 'h6',
+	[VariantTypographyValues.SUBTITLE]: 'div',
+	[VariantTypographyValues.BODY]: 'div',
+}
+
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	text: string;
 	variant: VariantTypographyValues;
@@ -25,8 +36,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const cx = classNames.bind(styles);
 
-export const Typography: FC<Props> = ({text, variant, fontWeight, fontSize, color, ...props}) => {
-	const TagName = variant as React.ElementType;
+export const Typography: FC<Props> = ({text, variant, fontWeight, fontSize, color, style, ...props}) => {
+	const TagName = VariantTypographyTags[variant] as React.ElementType;
 	
-	return <TagName {...props} style={{color, fontSize, fontWeight}} className={cx(variant, 'title')}>{text}</TagName>
+	return <TagName {...props} style={{color, fontSize, fontWeight, ...style,}} className={cx(variant, 'title')}>{text}</TagName>
 };
