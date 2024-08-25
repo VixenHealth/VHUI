@@ -25,8 +25,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const cx = classNames.bind(styles);
 
-export const Typography: FC<Props> = ({text, variant, fontWeight, fontSize, color}) => {
+export const Typography: FC<Props> = ({text, variant, fontWeight, fontSize, color, ...props}) => {
 	const TagName = variant as React.ElementType;
 	
-	return <TagName style={{color, fontSize, fontWeight}} className={cx(variant, 'title')}>{text}</TagName>
+	return <TagName {...props} style={{color, fontSize, fontWeight}} className={cx(variant, 'title')}>{text}</TagName>
 };
