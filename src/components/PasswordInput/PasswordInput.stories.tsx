@@ -27,4 +27,13 @@ export const ErrorPasswordInput: StoryObj<typeof meta> = {
 	}
 }
 
+export const DescriptionPasswordInput: StoryObj<typeof meta> = {
+	args: {
+		error: '',
+		placeholder: 'Text',
+		inputSize: SizeInputValues.BIG,
+		description: 'Description'
+	}
+}
+
 export default meta;

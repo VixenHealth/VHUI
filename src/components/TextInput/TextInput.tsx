@@ -12,12 +12,14 @@ const cx = classNames.bind(styles);
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	placeholder: string;
 	inputSize: SizeInputValues;
-	error: string
+	error: string;
+	description?: string;
 }
 
-export const TextInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
+export const TextInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, description, ...props}, ref) => {
 	return (
 		<div className={cx("text-field")}>
+			{description && <div className={cx("text-field__description")}>{description}</div>}
 			<input
 				ref={ref}
 				type="text"

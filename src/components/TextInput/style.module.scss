@@ -6,6 +6,13 @@
   flex-direction: column;
   gap: 5px;
 
+  &__description {
+    color: $color-dark-main;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
   &__input {
     width: 100%;
     background-color: $neutral-color;

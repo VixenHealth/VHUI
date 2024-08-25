@@ -14,6 +14,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	placeholder: string;
 	inputSize: SizeInputValues;
 	error: string
+	description?: string;
 }
 
 enum TypeInput {
@@ -21,8 +22,8 @@ enum TypeInput {
 	TEXT = "text",
 }
 
-export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, ...props}, ref) => {
-	const [isHidden, setIsHidden] = useState(true);
+export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, description, ...props}, ref) => {
+	const [isHidden, setIsHidden] = useState(true)
 	
 	const toggleIsHidden = () => {
 		setIsHidden(!isHidden);
@@ -30,6 +31,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 	
 	return (
 		<div className={cx("text-field")}>
+			{description && <div className={cx("text-field__description")}>{description}</div>}
 			<div className={cx("text-field__wrapper")}>
 				<input
 					ref={ref}
