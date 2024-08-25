@@ -15,7 +15,7 @@ export enum VariantTypographyValues {
 	BODY = 'body',
 }
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	text: string;
 	variant: VariantTypographyValues;
 	color?: string;
