@@ -26,6 +26,7 @@ export const Select: FC<Props> = ({title, variants}) => {
 	const handleSelectVariant = (variant: string) => {
 		setSelectVariant(variant);
 		setIsSelectedVariant(true);
+		setOpen(false);
 	}
 	
 	const mountedStyle = { animation: "inAnimation 250ms ease-in" };
