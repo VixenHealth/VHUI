@@ -1,19 +1,34 @@
 @import '../../_variables';
 
 .button {
-  padding: 17px 0;
-  font-size: 22px;
-  font-weight: 700;
   transition: background-color 0.3s ease-in-out;
+  width: 100%;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
 
   &.big {
+    padding: 17px 0;
+    font-size: 22px;
+    font-weight: 700;
     border-radius: 13px;
-    width: 289px;
     @media(max-width: $md3) {
       width: 100%;
       font-size: 16px;
       padding: 16px 0;
     }
+  }
+
+  &.medium {
+    border-radius: 13px;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: 700;
   }
 
   &.dark {

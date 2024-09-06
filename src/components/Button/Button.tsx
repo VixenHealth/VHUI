@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import {ButtonHTMLAttributes, FC} from "react";
 import classNames from "classnames/bind";
 
@@ -22,6 +22,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;
 	size: SizeButtonValues;
 	color?: ColorButtonValues;
+	icon?: ReactNode;
 }
 
 export const Button: FC<Props> = ({
@@ -29,7 +30,15 @@ export const Button: FC<Props> = ({
 	                                  size,
 	                                  color = ColorButtonValues.DARK,
 	                                  style,
+	                                  icon,
 	                                  ...props
                                   }) => {
-	return <button style={{...style}} className={cx("button", size, color)} {...props}>{text}</button>;
+	return (
+		<button style={{...style}} className={cx("button", size, color)} {...props}>
+			<span className={cx("button__content")}>
+				{text}
+				{icon && icon}
+			</span>
+		</button>
+	);
 };
