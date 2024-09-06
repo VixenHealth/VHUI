@@ -6,14 +6,14 @@ import 'normalize.css'
 
 const cx = classNames.bind(styles);
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	label: string;
 	id: string;
 }
 
-export const AppCheckbox: FC<Props> = ({label, id}) => {
+export const AppCheckbox: FC<Props> = ({label, id, style}) => {
 	return (
-		<div className={cx("app-checkbox")}>
+		<div style={{...style}} className={cx("app-checkbox")}>
 			<input className={cx("app-checkbox__input")} type="checkbox" id={id}/>
 			<label className={cx("app-checkbox__label")} htmlFor={id}>
 				{label}

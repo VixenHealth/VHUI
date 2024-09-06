@@ -7,12 +7,12 @@ import 'normalize.css'
 
 const cx = classNames.bind(styles);
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	text: string;
 }
 
-export const AppLink: FC<Props> = ({text}) => {
+export const AppLink: FC<Props> = ({text, style}) => {
 	return (
-		<div className={cx("link")}>{text}</div>
+		<div style={{...style}} className={cx("link")}>{text}</div>
 	);
 };

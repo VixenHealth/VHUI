@@ -28,7 +28,8 @@ export const Button: FC<Props> = ({
 	                                  text,
 	                                  size,
 	                                  color = ColorButtonValues.DARK,
+	                                  style,
 	                                  ...props
                                   }) => {
-	return <button className={cx("button", size, color)} {...props}>{text}</button>;
+	return <button style={{...style}} className={cx("button", size, color)} {...props}>{text}</button>;
 };

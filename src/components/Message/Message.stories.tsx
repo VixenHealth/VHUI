@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react'
-import {Message, SizeErrorMessageValues} from "./Message";
+import {Message, SizeMessageValues} from "./Message";
 
 const meta: Meta<typeof Message> = {
 	title: 'shared/Message',
@@ -14,7 +14,7 @@ export const LargeMessage: StoryObj<typeof meta> = {
 	args: {
 		message: "message",
 		description: "message description",
-		size: SizeErrorMessageValues.LARGE,
+		size: SizeMessageValues.LARGE,
 		onClick: () => {
 			console.log("close")
 		},
@@ -26,7 +26,7 @@ export const SmallMessage: StoryObj<typeof meta> = {
 	args: {
 		message: "message",
 		description: "message description",
-		size: SizeErrorMessageValues.SMALL,
+		size: SizeMessageValues.SMALL,
 		onClick: () => {
 			console.log("close")
 		},

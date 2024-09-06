@@ -13,7 +13,7 @@ export enum SizeMessageValues {
 	SMALL = "small"
 }
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	message: string;
 	description?: string;
 	size: SizeMessageValues;
@@ -21,7 +21,7 @@ interface Props {
 	timeToDelete: number;
 }
 
-export const Message: FC<Props> = ({message, size, description, onClick, timeToDelete}) => {
+export const Message: FC<Props> = ({message, size, description, onClick, timeToDelete, style}) => {
 	const messageRef = useRef<HTMLInputElement>(null)
 	const [time, setTime] = useState<number>(timeToDelete)
 	const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
@@ -60,6 +60,7 @@ export const Message: FC<Props> = ({message, size, description, onClick, timeToD
 	
 	return (
 		<div
+			style={{...style}}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			ref={messageRef}

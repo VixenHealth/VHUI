@@ -16,9 +16,15 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	description?: string;
 }
 
-export const EmailInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, description, ...props}, ref) => {
+export const EmailInput = forwardRef<HTMLInputElement, Props>(({
+	                                                               inputSize,
+	                                                               error,
+	                                                               description,
+	                                                               style,
+	                                                               ...props
+                                                               }, ref) => {
 	return (
-		<div className={cx("text-field")}>
+		<div style={{...style}} className={cx("text-field")}>
 			{description && <div className={cx("text-field__description")}>{description}</div>}
 			<input
 				ref={ref}

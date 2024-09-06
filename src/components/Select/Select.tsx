@@ -9,12 +9,12 @@ import {OutsideClickHandler} from "../OutsideClickHandlerProps";
 
 const cx = classNames.bind(styles);
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	title: string;
 	variants: string[];
 }
 
-export const Select: FC<Props> = ({title, variants}) => {
+export const Select: FC<Props> = ({title, variants, style}) => {
 	const [isOpen, setOpen] = useState(false);
 	const [selectVariant, setSelectVariant] = useState(title);
 	const [isSelectedVariant, setIsSelectedVariant] = useState(false)
@@ -35,10 +35,8 @@ export const Select: FC<Props> = ({title, variants}) => {
 		animationFillMode: "forwards"
 	};
 	
-	console.log(isOpen)
-	
 	return (
-		<OutsideClickHandler onOutsideClick={setOpen}>
+		<OutsideClickHandler style={{...style}} onOutsideClick={setOpen}>
 			<div className={cx("select")}>
 				<div className={cx("select__preview", {isOpen})}>
 					<div className={cx("select__title", {isSelectedVariant})}>{selectVariant}</div>

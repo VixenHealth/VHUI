@@ -1,15 +1,16 @@
 import React from "react";
-import { FC, useEffect, useRef } from "react";
+import {FC, useEffect, useRef} from "react";
 
-interface OutsideClickHandlerProps {
+interface OutsideClickHandlerProps extends React.HTMLAttributes<HTMLDivElement> {
 	onOutsideClick: (value: boolean) => void;
 	children?: React.ReactNode;
 }
 
 export const OutsideClickHandler: FC<OutsideClickHandlerProps> = ({
-	                                                           onOutsideClick,
-	                                                           children,
-                                                           }) => {
+	                                                                  onOutsideClick,
+	                                                                  children,
+	                                                                  style
+                                                                  }) => {
 	const ref = useRef<HTMLDivElement>({} as HTMLDivElement);
 	
 	useEffect(() => {
@@ -25,5 +26,5 @@ export const OutsideClickHandler: FC<OutsideClickHandlerProps> = ({
 		};
 	}, [onOutsideClick]);
 	
-	return <div ref={ref}>{children}</div>;
+	return <div style={{...style}} ref={ref}>{children}</div>;
 };

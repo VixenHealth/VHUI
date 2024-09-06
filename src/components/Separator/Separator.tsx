@@ -5,13 +5,13 @@ import styles from "./style.module.scss";
 
 const cx = classNames.bind(styles);
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	text?: string;
 }
 
-export const Separator: FC<Props> = ({text}) => {
+export const Separator: FC<Props> = ({text, style}) => {
 	return (
-		<>
+		<div style={{...style}}>
 			{text ? (
 				<div className={cx("separator")}>
 					<span className={cx("separator__line")}></span>
@@ -21,6 +21,6 @@ export const Separator: FC<Props> = ({text}) => {
 			) : (
 				<span className={cx("separator__line")}></span>
 			)}
-		</>
+		</div>
 	);
 };

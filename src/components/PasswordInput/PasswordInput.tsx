@@ -22,7 +22,7 @@ enum TypeInput {
 	TEXT = "text",
 }
 
-export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, description, ...props}, ref) => {
+export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, error, description, style, ...props}, ref) => {
 	const [isHidden, setIsHidden] = useState(true)
 	
 	const toggleIsHidden = () => {
@@ -30,7 +30,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, Props>(({inputSize, er
 	}
 	
 	return (
-		<div className={cx("text-field")}>
+		<div style={{...style}} className={cx("text-field")}>
 			{description && <div className={cx("text-field__description")}>{description}</div>}
 			<div className={cx("text-field__wrapper")}>
 				<input
