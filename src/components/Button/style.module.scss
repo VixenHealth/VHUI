@@ -12,6 +12,17 @@
     gap: 7px;
   }
 
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    & > * {
+      object-fit: cover;
+    }
+  }
+
   &.big {
     padding: 17px 0;
     font-size: 22px;

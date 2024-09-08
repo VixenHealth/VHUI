@@ -37,7 +37,9 @@ export const Button: FC<Props> = ({
 		<button style={{...style}} className={cx("button", size, color)} {...props}>
 			<span className={cx("button__content")}>
 				{text}
-				{icon && icon}
+				{icon && (
+					<span className={cx("button__icon")}>{icon}</span>
+				)}
 			</span>
 		</button>
 	);
