@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	placeholder: string;
 	inputSize: SizeInputValues;
-	error: string
+	error?: string
 	description?: string;
 }
 
