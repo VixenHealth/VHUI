@@ -5,6 +5,8 @@
   width: 115px;
   color: $color-secondary-gray;
   font-size: 20px;
+  border-radius: 8px;
+  background-color: $color-primary-white;
 
   &__preview {
     width: 100%;
@@ -43,6 +45,15 @@
     color: $color-dark-secondary;
     width: 115px;
     background-color: inherit;
+    max-height: 140px;
+    overflow-y: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__variant {

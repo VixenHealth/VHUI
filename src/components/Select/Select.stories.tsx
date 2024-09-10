@@ -13,7 +13,7 @@ const meta: Meta<typeof Select> = {
 export const CommonSelect: StoryObj<typeof meta> = {
 	args: {
 		title: "Select",
-		variants: ["Select1", "Select2", "Select3", "Select4"]
+		variants: ["Select1", "Select2", "Select3", "Select4", "Select4", "Select4", "Select4", "Select4"]
 	}
 }
 

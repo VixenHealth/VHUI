@@ -36,8 +36,8 @@ export const Select: FC<Props> = ({title, variants, style}) => {
 	};
 	
 	return (
-		<OutsideClickHandler style={{...style}} onOutsideClick={setOpen}>
-			<div className={cx("select")}>
+		<OutsideClickHandler onOutsideClick={setOpen}>
+			<div style={{...style}} className={cx("select")}>
 				<div className={cx("select__preview", {isOpen})}>
 					<div className={cx("select__title", {isSelectedVariant})}>{selectVariant}</div>
 					<img className={cx("select__open")} onClick={handleOpen} src={SelectOpen} alt="select"/>
