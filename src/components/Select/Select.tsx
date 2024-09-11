@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	title: string;
 	variants: string[];
-	onSelectVariant: (variant: string) => void;
+	onSelectVariant?: (variant: string) => void;
 }
 
 export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => {
@@ -25,7 +25,9 @@ export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => 
 	}
 	
 	const handleSelectVariant = (variant: string) => {
-		onSelectVariant(variant);
+		if (onSelectVariant) {
+			onSelectVariant(variant);
+		}
 		setSelectVariant(variant);
 		setIsSelectedVariant(true);
 		setOpen(false);
