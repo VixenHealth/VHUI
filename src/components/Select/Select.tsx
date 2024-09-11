@@ -12,9 +12,10 @@ const cx = classNames.bind(styles);
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	title: string;
 	variants: string[];
+	onSelectVariant?: (variant: string) => void;
 }
 
-export const Select: FC<Props> = ({title, variants, style}) => {
+export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => {
 	const [isOpen, setOpen] = useState(false);
 	const [selectVariant, setSelectVariant] = useState(title);
 	const [isSelectedVariant, setIsSelectedVariant] = useState(false)
@@ -24,6 +25,9 @@ export const Select: FC<Props> = ({title, variants, style}) => {
 	}
 	
 	const handleSelectVariant = (variant: string) => {
+		if (onSelectVariant) {
+			onSelectVariant(variant);
+		}
 		setSelectVariant(variant);
 		setIsSelectedVariant(true);
 		setOpen(false);
@@ -47,8 +51,9 @@ export const Select: FC<Props> = ({title, variants, style}) => {
 						className={cx("select__variants")}
 						style={isOpen ? mountedStyle : unmountedStyle}
 					>
-						{variants.map((variant) => (
-							<div onClick={() => handleSelectVariant(variant)} className={cx("select__variant")}>{variant}</div>
+						{variants.map((variant, step) => (
+							<div key={step}
+									 onClick={() => handleSelectVariant(variant)} className={cx("select__variant")}>{variant}</div>
 						))}
 					</div>
 				)}
