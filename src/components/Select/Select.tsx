@@ -52,7 +52,8 @@ export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => 
 						style={isOpen ? mountedStyle : unmountedStyle}
 					>
 						{variants.map((variant, step) => (
-							<div key={step} onClick={() => handleSelectVariant(variant)} className={cx("select__variant")}>{variant}</div>
+							<div key={step}
+									 onClick={() => handleSelectVariant(variant)} className={cx("select__variant")}>{variant}</div>
 						))}
 					</div>
 				)}
