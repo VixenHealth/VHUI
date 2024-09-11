@@ -2,7 +2,7 @@
 
 .select {
   position: relative;
-  width: 115px;
+  width: 130px;
   color: $color-secondary-gray;
   font-size: 20px;
   border-radius: 8px;
@@ -26,9 +26,14 @@
 
   &__open {
     cursor: pointer;
+    margin-left: 10px;
   }
 
   &__title {
+    width: 100%;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
     &.isSelectedVariant {
       color: $color-dark-secondary;
     }
@@ -43,11 +48,11 @@
     border-radius: 0 0 8px 8px;
     border-top: none;
     color: $color-dark-secondary;
-    width: 115px;
+    width: 130px;
     background-color: inherit;
     max-height: 140px;
     overflow-y: auto;
-
+    z-index: 5;
     -ms-overflow-style: none;
     scrollbar-width: none;
 

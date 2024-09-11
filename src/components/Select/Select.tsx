@@ -3,9 +3,9 @@ import classNames from "classnames/bind";
 import 'normalize.css'
 
 import SelectOpen from "../../assets/select.svg"
+import {OutsideClickHandler} from "../OutsideClickHandlerProps";
 
 import styles from "./style.module.scss";
-import {OutsideClickHandler} from "../OutsideClickHandlerProps";
 
 const cx = classNames.bind(styles);
 
