@@ -24,6 +24,34 @@ export const TitleH2: StoryObj<typeof meta> = {
 	}
 }
 
+export const TitleH3: StoryObj<typeof meta> = {
+	args: {
+		text: 'Text',
+		variant: VariantTypographyValues.H3
+	}
+}
+
+export const TitleH4: StoryObj<typeof meta> = {
+	args: {
+		text: 'Text',
+		variant: VariantTypographyValues.H4
+	}
+}
+
+export const TitleH5: StoryObj<typeof meta> = {
+	args: {
+		text: 'Text',
+		variant: VariantTypographyValues.H5
+	}
+}
+
+export const TitleH6: StoryObj<typeof meta> = {
+	args: {
+		text: 'Text',
+		variant: VariantTypographyValues.H6
+	}
+}
+
 export const Subtitle: StoryObj<typeof meta> = {
 	args: {
 		text: 'Text',
