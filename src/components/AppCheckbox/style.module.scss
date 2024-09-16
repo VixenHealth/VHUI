@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 28px;
 
   &__input {
     position: absolute;
@@ -14,20 +13,21 @@
     opacity: 0;
   }
 
-  &__input + &__label::before {
+  &__label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__box {
     content: "";
     display: block;
     width: 20px;
     height: 20px;
     border: 2px solid $color-dark-secondary;
     border-radius: 3px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: calc(100% + 10px);
   }
 
-  &__input:checked + &__label::before {
+  &__input:checked + &__box {
     border-radius: 3px;
     background-color: $color-accent-main;
     background-image: url("../../assets/checked.svg");
