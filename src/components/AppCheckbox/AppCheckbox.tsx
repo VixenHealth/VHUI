@@ -28,8 +28,8 @@ export const AppCheckbox: FC<Props> = ({
 				onChange={onChange}
 				type="checkbox" id={id}
 			/>
-			<span className="app-checkbox__box"></span>
-			<span className="app-checkbox__label">{label}</span>
+			<span className={cx("app-checkbox__box")}></span>
+			<span className={cx("app-checkbox__label")}>{label}</span>
 		</label>
 	);
 };
