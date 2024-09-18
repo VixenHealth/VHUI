@@ -14,8 +14,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export const AppCheckbox: FC<Props> = forwardRef<HTMLInputElement, Props>(({
 	                                                                           label,
-	                                                                           checked,
-	                                                                           onChange,
 	                                                                           style,
 	                                                                           ...props
                                                                            }, ref) => {
@@ -24,8 +22,6 @@ export const AppCheckbox: FC<Props> = forwardRef<HTMLInputElement, Props>(({
 			<input
 				ref={ref}
 				className={cx("app-checkbox__input")}
-				checked={checked}
-				onChange={onChange}
 				type="checkbox"
 				{...props}
 			/>
