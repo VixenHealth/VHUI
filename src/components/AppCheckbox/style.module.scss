@@ -25,6 +25,7 @@
     height: 20px;
     border: 2px solid $color-dark-secondary;
     border-radius: 3px;
+    flex-shrink: 0;
   }
 
   &__input:checked + &__box {
