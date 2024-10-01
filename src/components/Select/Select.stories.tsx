@@ -17,5 +17,12 @@ export const CommonSelect: StoryObj<typeof meta> = {
 	}
 }
 
+export const CommonSelectWithDefaultValue: StoryObj<typeof meta> = {
+	args: {
+		title: "Select",
+		variants: ["Select1", "Select2", "Select3", "Select4", "Select4", "Select4", "Select4", "Select4"],
+		defaultValue: "Select1"
+	}
+}
 
 export default meta;

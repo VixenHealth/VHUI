@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react"
+import React, {FC, useEffect, useState} from "react"
 import classNames from "classnames/bind";
 import 'normalize.css'
 
@@ -13,9 +13,10 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	title: string;
 	variants: string[];
 	onSelectVariant?: (variant: string) => void;
+	defaultValue?: string;
 }
 
-export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => {
+export const Select: FC<Props> = ({title, variants, style, onSelectVariant, defaultValue}) => {
 	const [isOpen, setOpen] = useState(false);
 	const [selectVariant, setSelectVariant] = useState(title);
 	const [isSelectedVariant, setIsSelectedVariant] = useState(false)
@@ -33,7 +34,13 @@ export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => 
 		setOpen(false);
 	}
 	
-	const mountedStyle = { animation: "inAnimation 250ms ease-in" };
+	useEffect(() => {
+		if (defaultValue) {
+			setSelectVariant(defaultValue);
+		}
+	}, [defaultValue]);
+	
+	const mountedStyle = {animation: "inAnimation 250ms ease-in"};
 	const unmountedStyle = {
 		animation: "outAnimation 270ms ease-out",
 		animationFillMode: "forwards"
@@ -53,7 +60,7 @@ export const Select: FC<Props> = ({title, variants, style, onSelectVariant}) => 
 					>
 						{variants.map((variant, step) => (
 							<div key={step}
-									 onClick={() => handleSelectVariant(variant)} className={cx("select__variant")}>{variant}</div>
+							     onClick={() => handleSelectVariant(variant)} className={cx("select__variant")}>{variant}</div>
 						))}
 					</div>
 				)}
