@@ -1,0 +1,10 @@
+@import '../../../../_variables';
+
+.content {
+  background-color: $color-light-bg;
+  padding: 30px;
+  border-radius: 30px;
+  transition: 0.4s transform;
+  transform: scale(0.5);
+  width: 60%;
+}

@@ -8,3 +8,5 @@ export {Typography, VariantTypographyValues} from "./Typography";
 export {Separator} from "./Separator";
 export {Message, SizeMessageValues} from "./Message";
 export {Select} from "./Select";
+export {Modal} from "./Modal";
+export {ModalVariants} from "./Modal/types/variants"

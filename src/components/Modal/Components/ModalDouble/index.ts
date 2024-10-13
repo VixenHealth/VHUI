@@ -1,0 +1,1 @@
+export {ModalDouble} from "./ModalDouble"
