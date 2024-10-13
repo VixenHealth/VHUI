@@ -15,7 +15,7 @@ export const ModalVariantsComponents = {
 	[ModalVariants.DOUBLE]: ModalDouble
 }
 
-type ModalProps = VariantModalBase & VariantModalDouble & {variant: ModalVariants};
+type ModalProps = (VariantModalBase | VariantModalDouble) & {variant: ModalVariants};
 
 const ANIMATION_DELAY = 400;
 
