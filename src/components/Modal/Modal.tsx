@@ -54,8 +54,6 @@ export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 	}, [isOpen, onKeyDown]);
 	
 	const ModalComponent = ModalVariantsComponents[variant];
-	console.log(ModalComponent)
-	console.log(variant)
 	
 	return (
 		<Portal>
