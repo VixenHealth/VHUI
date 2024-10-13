@@ -11,11 +11,11 @@ export interface Modal extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export interface VariantModalBase extends Modal {
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export interface VariantModalDouble extends Modal {
-	isDouble: true;
-	topContentChildren: ReactNode;
-	bottomContentChildren: ReactNode;
+	isDouble?: true;
+	topContentChildren?: ReactNode;
+	bottomContentChildren?: ReactNode;
 }
