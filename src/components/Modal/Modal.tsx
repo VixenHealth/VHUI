@@ -59,7 +59,7 @@ export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 		<Portal>
 			<div className={cx("modal", {isOpen, isClosing})}>
 				<div className={cx("overlay")} onClick={handleClose}>
-					<ModalComponent isOpen={isOpen} onClose={onClose} {...props} />
+					<ModalComponent {...props} isClosing={isClosing} isOpen={isOpen} onClose={onClose} />
 				</div>
 			</div>
 		</Portal>

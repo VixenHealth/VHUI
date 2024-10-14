@@ -8,6 +8,7 @@ export enum ModalVariants {
 export interface Modal extends React.HTMLAttributes<HTMLDivElement> {
 	isOpen: boolean;
 	onClose: () => void;
+	isClosing: boolean;
 }
 
 export interface VariantModalBase extends Modal {
