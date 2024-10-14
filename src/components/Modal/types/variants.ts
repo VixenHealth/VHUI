@@ -15,7 +15,6 @@ export interface VariantModalBase extends Modal {
 }
 
 export interface VariantModalDouble extends Modal {
-	isDouble?: true;
 	topContentChildren?: ReactNode;
 	bottomContentChildren?: ReactNode;
 }
