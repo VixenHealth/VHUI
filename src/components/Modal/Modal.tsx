@@ -15,7 +15,7 @@ export const ModalVariantsComponents = {
 	[ModalVariants.DOUBLE]: ModalDouble
 }
 
-type ModalProps = Omit<VariantModalBase | VariantModalDouble, "isClosing"> & {variant: ModalVariants};
+type ModalProps = Omit<(VariantModalBase | VariantModalDouble), "isClosing"> & {variant: ModalVariants};
 
 const ANIMATION_DELAY = 400;
 
