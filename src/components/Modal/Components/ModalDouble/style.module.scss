@@ -9,10 +9,30 @@
   display: flex;
   flex-direction: column;
   gap: 13px;
+  position: relative;
 
   &__top, &__bottom {
     padding: 40px 55px;
     border-radius: 30px;
     background-color: $color-light-bg;
+  }
+
+  &__close {
+    position: absolute;
+    top: 27px;
+    right: 39px;
+    cursor: pointer;
+  }
+}
+
+.isOpen {
+  .content {
+    transform: scale(1);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: scale(0.5);
   }
 }

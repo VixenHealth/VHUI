@@ -7,4 +7,24 @@
   transition: 0.4s transform;
   transform: scale(0.5);
   width: 60%;
+  position: relative;
+
+  &__close {
+    position: absolute;
+    top: 27px;
+    right: 39px;
+    cursor: pointer;
+  }
+}
+
+.isOpen {
+  .content {
+    transform: scale(1);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: scale(0.5);
+  }
 }
