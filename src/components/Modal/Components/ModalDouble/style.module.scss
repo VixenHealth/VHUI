@@ -24,12 +24,12 @@
     cursor: pointer;
   }
 
-  & .isOpen {
-    transform: scale(1);
-  }
-
-  & .isClosing {
-    transform: scale(0.5);
-  }
 }
 
+.isOpen .content {
+  transform: scale(1);
+}
+
+.isClosing .content {
+  transform: scale(0.5);
+}
