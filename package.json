@@ -1,6 +1,6 @@
 {
   "name": "@VixenHealth/vixenhealth-ui",
-  "version": "1.6.24",
+  "version": "1.6.25",
   "repository": "https://github.com/VixenHealth/VHUI.git",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
