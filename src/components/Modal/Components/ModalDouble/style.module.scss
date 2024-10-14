@@ -23,17 +23,16 @@
     right: 39px;
     cursor: pointer;
   }
-
 }
 
 .isOpen {
-  .content {
+  & .content {
     transform: scale(1);
   }
 }
 
 .isClosing {
-  .content {
+  & .content {
     transform: scale(0.5);
   }
 }
