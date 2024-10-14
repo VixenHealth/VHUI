@@ -24,7 +24,6 @@ export const DoubleModal: StoryObj<typeof meta> = {
 	args: {
 		isOpen: true,
 		style: {width: 600},
-		isDouble: true,
 		topContentChildren: 'topContent',
 		bottomContentChildren: 'bottomContent',
 		variant: ModalVariants.DOUBLE,
