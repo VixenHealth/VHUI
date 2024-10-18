@@ -23,16 +23,14 @@
     right: 39px;
     cursor: pointer;
   }
-}
 
-.isOpen {
-  & .content {
+  & .isOpen {
     transform: scale(1);
   }
-}
 
-.isClosing {
-  & .content {
+  .isClosing {
     transform: scale(0.5);
   }
 }
+
+
