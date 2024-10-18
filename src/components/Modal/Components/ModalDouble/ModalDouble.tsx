@@ -14,7 +14,7 @@ export const ModalDouble: FC<VariantModalDouble> = ({style, topContentChildren, 
 	};
 	
 	return (
-		<div style={{...style}} className={cx("content", {isOpen, isClosing})} onClick={onContentClick}>
+		<div style={{...style}} className={cx("content")} onClick={onContentClick}>
 			<div onClick={onClose} className={cx("content__close")}>
 				<img src={CloseIcon} alt=""/>
 			</div>
