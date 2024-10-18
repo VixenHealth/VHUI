@@ -15,14 +15,6 @@
     z-index: $z-index-overlay;
     opacity: 1;
   }
-
-  &.isOpen .content {
-    transform: scale(1);
-  }
-
-  &.isClosing .content {
-    transform: scale(0.5);
-  }
 }
 
 .overlay {

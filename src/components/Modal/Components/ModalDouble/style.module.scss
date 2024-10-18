@@ -23,6 +23,14 @@
     right: 39px;
     cursor: pointer;
   }
+
+  &.isOpen {
+    transform: scale(1);
+  }
+
+  &.isClosing {
+    transform: scale(0.5);
+  }
 }
 
 
