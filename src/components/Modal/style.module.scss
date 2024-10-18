@@ -10,6 +10,12 @@
   opacity: 0;
   pointer-events: none;
 
+  &.isOpen {
+    pointer-events: auto;
+    z-index: $z-index-overlay;
+    opacity: 1;
+  }
+
   &.isOpen .content {
     transform: scale(1);
   }
@@ -28,8 +34,3 @@
   justify-content: center;
 }
 
-.isOpen {
-  pointer-events: auto;
-  z-index: $z-index-overlay;
-  opacity: 1;
-}
