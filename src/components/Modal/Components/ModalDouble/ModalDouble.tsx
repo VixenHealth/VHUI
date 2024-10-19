@@ -14,14 +14,15 @@ export const ModalDouble: FC<VariantModalDouble> = ({
 	                                                    bottomContentChildren,
 	                                                    onClose,
 	                                                    isOpen,
-	                                                    isClosing
+	                                                    isClosing,
+	                                                    isOpening
                                                     }) => {
 	const onContentClick = (e: React.MouseEvent) => {
 		e.stopPropagation();
 	};
 	
 	return (
-		<div style={{...style}} className={cx("content", {isOpen, isClosing})} onClick={onContentClick}>
+		<div style={{...style}} className={cx("content", {isOpen, isClosing, isOpening})} onClick={onContentClick}>
 			<div onClick={onClose} className={cx("content__close")}>
 				<img src={CloseIcon} alt=""/>
 			</div>

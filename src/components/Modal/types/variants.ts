@@ -9,6 +9,7 @@ export interface Modal extends React.HTMLAttributes<HTMLDivElement> {
 	isOpen: boolean;
 	onClose: () => void;
 	isClosing: boolean;
+	isOpening: boolean;
 }
 
 export interface VariantModalBase extends Modal {

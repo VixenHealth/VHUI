@@ -8,13 +8,13 @@ import CloseIcon from "../../../../assets/modal-close.svg";
 
 const cx = classNames.bind(styles);
 
-export const ModalBase: FC<VariantModalBase> = ({style, children, onClose }) => {
+export const ModalBase: FC<VariantModalBase> = ({style, children, onClose, isClosing, isOpening}) => {
 	const onContentClick = (e: React.MouseEvent) => {
 		e.stopPropagation();
 	};
 	
 	return (
-		<div style={{...style}} className={cx("content")} onClick={onContentClick}>
+		<div style={{...style}} className={cx("content", {isClosing, isOpening})} onClick={onContentClick}>
 			<div onClick={onClose} className={cx("content__close")}>
 				<img src={CloseIcon} alt=""/>
 			</div>

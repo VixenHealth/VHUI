@@ -16,8 +16,8 @@ export const ModalVariantsComponents = {
 }
 
 type ModalProps =
-	| ({ variant: ModalVariants.BASE } & Omit<VariantModalBase, "isClosing">)
-	| ({ variant: ModalVariants.DOUBLE } & Omit<VariantModalDouble, "isClosing">);
+	| ({ variant: ModalVariants.BASE } & Omit<VariantModalBase, "isClosing" | "isOpening">)
+	| ({ variant: ModalVariants.DOUBLE } & Omit<VariantModalDouble, "isClosing" | "isOpening">);
 
 const ANIMATION_DELAY = 400;
 
@@ -71,7 +71,13 @@ export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 		<Portal>
 			<div className={cx("modal", {isOpen, isClosing})}>
 				<div className={cx("overlay")} onClick={handleClose}>
-					<ModalComponent isClosing={isClosing} isOpen={isOpen} onClose={onClose} {...props} />
+					<ModalComponent
+						isOpening={isOpening}
+						isClosing={isClosing}
+						isOpen={isOpen}
+						onClose={onClose}
+						{...props}
+					/>
 				</div>
 			</div>
 		</Portal>
