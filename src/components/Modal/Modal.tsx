@@ -23,7 +23,17 @@ const ANIMATION_DELAY = 400;
 
 export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 	const [isClosing, setIsClosing] = useState(false);
+	const [isOpening, setIsOpening] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
+	
+	useEffect(() => {
+		if (isOpen) {
+			setIsOpening(true);
+			timerRef.current = setTimeout(() => {
+				setIsOpening(false);
+			}, ANIMATION_DELAY);
+		}
+	}, [isOpen]);
 	
 	const handleClose = useCallback(() => {
 		if (onClose) {
