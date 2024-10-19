@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useEffect, useRef, useState,} from "react";
+import React, {FC, useCallback, useEffect, useLayoutEffect, useRef, useState,} from "react";
 import classNames from "classnames/bind";
 
 import {Portal} from "./Portal";
@@ -26,7 +26,7 @@ export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 	const [isOpening, setIsOpening] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
 	
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (isOpen) {
 			setIsOpening(true);
 			timerRef.current = setTimeout(() => {
