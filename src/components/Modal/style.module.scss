@@ -9,6 +9,12 @@
   z-index: -1;
   opacity: 0;
   pointer-events: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &.isOpen {
     pointer-events: auto;

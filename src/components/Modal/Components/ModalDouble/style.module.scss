@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 13px;
   position: relative;
+  max-height: calc(100vh - 40px);
 
   &__top, &__bottom {
     padding: 40px 55px;
