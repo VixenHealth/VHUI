@@ -28,13 +28,13 @@ export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 	
 	useEffect(() => {
 		if (isOpen) {
-			document.body.classList.add("no-scroll");
+			document.body.classList.add(cx("no-scroll"));
 		} else {
-			document.body.classList.remove("no-scroll");
+			document.body.classList.remove(cx("no-scroll"));
 		}
 		
 		return () => {
-			document.body.classList.remove("no-scroll");
+			document.body.classList.remove(cx("no-scroll"));
 		};
 	}, [isOpen]);
 	
