@@ -14,7 +14,12 @@
     pointer-events: auto;
     z-index: $z-index-overlay;
     opacity: 1;
+
+    & body {
+      overflow: hidden;
+    }
   }
+
 }
 
 .overlay {
