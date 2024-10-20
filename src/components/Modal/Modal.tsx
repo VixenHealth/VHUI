@@ -26,6 +26,18 @@ export const Modal: FC<ModalProps> = ({onClose, isOpen, variant, ...props}) => {
 	const [isOpening, setIsOpening] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
 	
+	useEffect(() => {
+		if (isOpen) {
+			document.body.classList.add("no-scroll");
+		} else {
+			document.body.classList.remove("no-scroll");
+		}
+		
+		return () => {
+			document.body.classList.remove("no-scroll");
+		};
+	}, [isOpen]);
+	
 	useLayoutEffect(() => {
 		if (isOpen) {
 			setIsOpening(true);
