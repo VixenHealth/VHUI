@@ -12,6 +12,13 @@
   max-height: calc(100vh - 40px);
   overflow-x: auto;
   scrollbar-width: none;
+  @media(max-width: $md4) {
+    width: 80%;
+  }
+  @media(max-width: $md5) {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -21,6 +28,16 @@
     padding: 40px 55px;
     border-radius: 30px;
     background-color: $color-light-bg;
+    @media(max-width: $md5) {
+      border-radius: 20px;
+      padding: 20px;
+    }
+  }
+
+  &__bottom {
+    @media(max-width: $md5) {
+      border-radius: 20px 20px 0 0;
+    }
   }
 
   &__close {
@@ -28,6 +45,10 @@
     top: 27px;
     right: 39px;
     cursor: pointer;
+    @media(max-width: $md5) {
+      top: 20px;
+      right: 20px;
+    }
   }
 
   &.isOpen {

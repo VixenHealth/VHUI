@@ -8,6 +8,13 @@
   transform: scale(0.5);
   width: 60%;
   position: relative;
+  max-height: calc(100vh - 40px);
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__close {
     position: absolute;
@@ -15,16 +22,16 @@
     right: 39px;
     cursor: pointer;
   }
-}
 
-.isOpen {
-  .content {
+  &.isOpen {
     transform: scale(1);
   }
-}
 
-.isClosing {
-  .content {
+  &.isClosing {
+    transform: scale(0.5);
+  }
+
+  &.isOpening {
     transform: scale(0.5);
   }
 }
