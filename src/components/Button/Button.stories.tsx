@@ -2,7 +2,7 @@ import React from "react";
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
 import {Button} from "../index";
-import {ColorButtonValues, SizeButtonValues} from "./Button";
+import {ColorButtonValues, SizeButtonValues, VariantButtonValues} from "./Button";
 import Icon from "../../assets/close.svg"
 
 const meta: Meta<typeof Button> = {
@@ -57,6 +57,16 @@ export const ButtonMediumNeutral: StoryObj<typeof meta> = {
 export const ButtonWithIcon: StoryObj<typeof meta> = {
 	args: {
 		text: 'Text',
+		size: SizeButtonValues.MEDIUM,
+		color: ColorButtonValues.NEUTRAL,
+		icon: <img src={Icon} alt="icon"/>
+	}
+}
+
+export const ButtonWithIconDanger: StoryObj<typeof meta> = {
+	args: {
+		text: 'Text',
+		variant: VariantButtonValues.DANGER,
 		size: SizeButtonValues.MEDIUM,
 		color: ColorButtonValues.NEUTRAL,
 		icon: <img src={Icon} alt="icon"/>

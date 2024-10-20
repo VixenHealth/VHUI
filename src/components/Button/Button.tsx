@@ -1,11 +1,15 @@
-import React, {ReactNode} from "react";
-import {ButtonHTMLAttributes, FC} from "react";
+import React, {ButtonHTMLAttributes, FC, ReactNode} from "react";
 import classNames from "classnames/bind";
 
 import styles from "./style.module.scss";
 import 'normalize.css'
 
 const cx = classNames.bind(styles);
+
+export enum VariantButtonValues {
+	BASE = "base",
+	DANGER = "danger",
+}
 
 export enum SizeButtonValues {
 	BIG = "big",
@@ -21,6 +25,7 @@ export enum ColorButtonValues {
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;
 	size: SizeButtonValues;
+	variant?: VariantButtonValues;
 	color?: ColorButtonValues;
 	icon?: ReactNode;
 }
@@ -28,13 +33,14 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: FC<Props> = ({
 	                                  text,
 	                                  size,
+	                                  variant = VariantButtonValues.BASE,
 	                                  color = ColorButtonValues.DARK,
 	                                  style,
 	                                  icon,
 	                                  ...props
                                   }) => {
 	return (
-		<button style={{...style}} className={cx("button", size, color)} {...props}>
+		<button style={{...style}} className={cx("button", variant, size, color)} {...props}>
 			<span className={cx("button__content")}>
 				{text}
 				{icon && (

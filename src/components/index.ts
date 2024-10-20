@@ -1,4 +1,4 @@
-export {Button, SizeButtonValues, ColorButtonValues} from "./Button";
+export {Button, SizeButtonValues, ColorButtonValues, VariantButtonValues} from "./Button";
 export {AppCheckbox} from "./AppCheckbox";
 export {TextInput} from "./TextInput";
 export {EmailInput} from "./EmailInput";

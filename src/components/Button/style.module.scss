@@ -58,6 +58,16 @@
       background-color: $neutral-color-hover;
     }
   }
+
+  &.danger {
+    background-color: inherit;
+    color: $color-accent-error;
+    border: 1.5px solid $color-accent-error;
+
+    &:hover {
+      background-color: rgba(200, 0, 0, 10%);
+    }
+  }
 }
 
 
