@@ -8,15 +8,15 @@ const cx = classNames.bind(styles);
 
 interface Props {
 	children: ReactNode;
-	title: string;
+	render: ReactNode;
 }
 
-export const Tooltip: FC<Props> = ({title, children}) => {
+export const Tooltip: FC<Props> = ({render, children}) => {
 	return (
 		<div className={cx("tooltip-container")}>
 			<div className={cx("tooltip")}>
 				<div className={cx("tooltip__content")}>
-					{title}
+					{render}
 				</div>
 			</div>
 			{children}

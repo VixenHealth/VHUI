@@ -13,14 +13,14 @@ const meta: Meta<typeof Tooltip> = {
 
 export const BaseTooltip: StoryObj<typeof meta> = {
 	args: {
-		title: "Свойство fit-content в CSS. Если браузер поддерживает это свойство, оно позволяет подстроить размер блока под размер его содержимого. Пример использования: div { width: fit-content; height: fit-content; }",
+		render: "Свойство fit-content в CSS. Если браузер поддерживает это свойство, оно позволяет подстроить размер блока под размер его содержимого. Пример использования: div { width: fit-content; height: fit-content; }",
 		children: <div>children</div>
 	}
 }
 
 export const BaseTooltipSmallContent: StoryObj<typeof meta> = {
 	args: {
-		title: "Свойство fit-content в CSS",
+		render: "Свойство fit-content в CSS",
 		children: <div>children</div>
 	}
 }
