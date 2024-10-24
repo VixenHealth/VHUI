@@ -1,0 +1,50 @@
+@import '../../_variables';
+
+.tooltip-container {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+
+  &:hover .tooltip {
+    display: block;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  max-height: 100px;
+  white-space: normal;
+  background-color: $color-dark-main;
+  color: $color-primary-white;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 300px;
+
+  &__content {
+    scrollbar-width: none;
+    max-height: 80px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $color-dark-main transparent transparent transparent;
+  }
+}
