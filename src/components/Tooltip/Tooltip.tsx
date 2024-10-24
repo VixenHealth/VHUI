@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 interface Props {
 	children: ReactNode;
-	render: ReactNode;
+	render: ReactNode | string;
 }
 
 export const Tooltip: FC<Props> = ({render, children}) => {
