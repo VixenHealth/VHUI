@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useState} from "react"
+import React, {FC, InputHTMLAttributes, ReactNode, useState} from "react"
 import classNames from "classnames/bind";
 
 import styles from "./style.module.scss";
@@ -10,21 +10,23 @@ interface ListItem {
 	text: string;
 }
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	selectList: ListItem[];
+	onSelectVariant?: (variant: string) => void;
 }
 
-export const MultipleSelect: FC<Props> = ({selectList}) => {
+export const MultipleSelect: FC<Props> = ({selectList, onSelectVariant, style}) => {
 	const [selectVariant, setSelectVariant] = useState('');
 	
 	const handleSelectVariant = (variant: string) => {
+		if (onSelectVariant) {
+			onSelectVariant(variant);
+		}
 		setSelectVariant(variant);
 	}
 	
-	console.log(selectVariant)
-	
 	return (
-		<div className={cx("select-list")}>
+		<div style={{...style}} className={cx("select-list")}>
 			{selectList.map((item) => (
 				<div key={item.text} onClick={() => handleSelectVariant(item.text)} className={cx("select-list__item", {
 					"selected": selectVariant === item.text,
