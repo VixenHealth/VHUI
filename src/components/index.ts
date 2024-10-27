@@ -11,3 +11,4 @@ export {Select} from "./Select";
 export {Modal} from "./Modal";
 export {ModalVariants} from "./Modal/types/variants";
 export {Tooltip} from "./Tooltip";
+export {MultipleSelect} from "./MultipleSelect";
