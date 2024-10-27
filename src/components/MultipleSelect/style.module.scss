@@ -40,9 +40,7 @@
     }
 
     & svg {
-      & path {
-        fill: $color-dark-main;
-      }
+      color: $color-dark-main;
     }
   }
 }
