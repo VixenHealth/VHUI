@@ -39,6 +39,9 @@
     padding: 12px 0;
     font-size: 20px;
     font-weight: 700;
+    @media(max-width: $md5) {
+      font-size: 16px;
+    }
   }
 
   &.dark {
