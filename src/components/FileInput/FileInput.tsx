@@ -1,4 +1,4 @@
-import React, {forwardRef, InputHTMLAttributes, useEffect, useState} from "react";
+import React, {FC, InputHTMLAttributes, useEffect, useState} from "react";
 import classNames from "classnames/bind";
 
 import FileImg from "../../assets/file-loader.svg"
@@ -13,22 +13,23 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	name: string;
 	withPreview?: boolean;
 	isMultiple?: boolean;
-	reset: any;
+	getValue?: (value: File[]) => void;
 }
 
-export const FileInput = forwardRef<HTMLInputElement, Props>(({
-	                                                              error,
-	                                                              name,
-	                                                              withPreview = false,
-	                                                              isMultiple = false,
-	                                                              onChange,
-	                                                              reset
-                                                              }, ref) => {
+export const FileInput: FC<Props> = ({
+	                                     error,
+	                                     name,
+	                                     withPreview = false,
+	                                     isMultiple = false,
+	                                     getValue
+                                     }) => {
 	const [files, setFiles] = useState<File[]>([]);
 	const acceptedExtensions = [".png", ".jpg", ".bmp"];
 	
 	useEffect(() => {
-		reset(name, files)
+		if (getValue) {
+			getValue(files)
+		}
 	}, [files]);
 	
 	const filterByAcceptedExtensions = (files: File[]) => {
@@ -82,7 +83,6 @@ export const FileInput = forwardRef<HTMLInputElement, Props>(({
 					<div className={cx("file-input__button", "file-input__button-dark")}>
 						<div>Выбрать файл</div>
 						<input
-							ref={ref}
 							className={cx("file-input__input")}
 							name={name}
 							type="file"
@@ -99,4 +99,4 @@ export const FileInput = forwardRef<HTMLInputElement, Props>(({
 			{files && withPreview && <FileListPreview setFiles={setFiles} files={files}/>}
 		</div>
 	)
-})
+}
