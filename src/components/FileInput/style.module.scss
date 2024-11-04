@@ -37,7 +37,9 @@
   &__buttons {
     display: flex;
     align-items: center;
-    gap: 31px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   &__button {
