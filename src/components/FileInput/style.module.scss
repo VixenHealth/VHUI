@@ -1,0 +1,88 @@
+@import "../../variables";
+
+.file-input {
+  &__info {
+    width: 100%;
+    border-radius: 19px;
+    border: 2px dashed $color-secondary-gray;
+    background-color: $color-gray-bg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 20px 58px 20px;
+
+    &.error {
+      border: 2px dashed $color-accent-error;
+    }
+  }
+
+  &__icon {
+    width: 157px;
+    height: 157px;
+
+    & > * {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    font-size: 21px;
+    font-weight: 500;
+    color: $color-secondary-light-gray;
+    margin-bottom: 38px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+  }
+
+  &__button {
+    position: relative;
+    width: 248px;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 13px;
+    text-align: center;
+    cursor: pointer;
+
+    &-dark {
+      background-color: $color-dark-main;
+      color: $color-gray-bg;
+    }
+  }
+
+  &__buffer {
+    & > input {
+      border: 2px solid $color-dark-main;
+      color: $color-dark-main;
+      width: 248px;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 13px;
+      background-color: inherit;
+    }
+  }
+
+  &__error {
+    color: $color-accent-error;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+}

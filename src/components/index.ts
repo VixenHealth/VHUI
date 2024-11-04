@@ -13,3 +13,4 @@ export {ModalVariants} from "./Modal/types/variants";
 export {Tooltip} from "./Tooltip";
 export {MultipleSelect} from "./MultipleSelect";
 export {AppRadioButtons} from "./AppRadioButtons";
+export {FileInput} from "./FileInput";
